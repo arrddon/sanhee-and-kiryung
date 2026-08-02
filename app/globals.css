@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+@import "tailwindcss";
 
 :root { --black:#111; --white:#f8f8f6; --grey:#d9d9d5; --accent:#ed5634; }
 * { box-sizing:border-box; }
