@@ -1,5 +1,5 @@
-import Reception from "./reception/reception";
+import { redirect } from "next/navigation";
 
 export default function Home() {
-  return <Reception />;
+  redirect("/reception");
 }
