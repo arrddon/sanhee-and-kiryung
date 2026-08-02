@@ -30,20 +30,18 @@ export default function Reception() {
     <main className="invitation">
       <section className="panel opening">
         <div className="opening-copy">
-          <h1>산희 <i>&amp;</i> 기륭</h1>
-          <p>우리답게 사랑하고 살아가기 위한<br />첫 번째 축하의 자리에 초대합니다.</p>
+          <h1>산희와 기륭</h1>
+          <p>평생의 프로젝트가 시작됩니다.<br /><span>그 첫 장면에 소중한 당신을 초대합니다.</span></p>
         </div>
+        <div className="reception-date"><span>RECEPTION</span><strong>2026. 08. 15. SAT · 12:00</strong></div>
         <Media src="/assets/reception-cover.jpg" className="opening-image" />
-        <p className="opening-date">2026. 08. 15. SAT · 12:00</p>
       </section>
 
       <section className="panel portrait-panel">
         <Media src="/assets/reception-portrait.jpg" className="portrait-image" />
-        <p className="portrait-words">함께, 오래.</p>
       </section>
 
       <section className="panel moments-panel">
-        <p className="moments-copy">함께한 날들의<br />작은 장면들</p>
         <div className="moments-grid">
           <Media type="video" src="/assets/reception-film-01.mp4" className="moment moment-wide" />
           <Media type="video" src="/assets/reception-film-02.mp4" className="moment moment-tall" />
@@ -53,14 +51,14 @@ export default function Reception() {
       <section className="panel information-panel">
         <div className="information-lead">
           <h2>8월 15일,<br />서울에서 만나요.</h2>
-          <p>맛있는 점심과 음악,<br />오래 기억할 이야기를 준비해둘게요.</p>
+          <p>가까운 친구들과 함께 편안히 식사하고<br />이야기를 나누는 자리를 준비했습니다.</p>
         </div>
         <dl className="information-list">
           <div><dt>일시</dt><dd>2026년 8월 15일 토요일, 낮 12시</dd></div>
           <div><dt>장소</dt><dd>보다 BODA<br /><small>서울 강남구 도산대로 308 코오롱빌딩</small></dd></div>
         </dl>
         <a className="directions" href="https://naver.me/GctrqOF5" target="_blank" rel="noreferrer">길 찾기 <span>↗</span></a>
-        <p className="signature">산희 &amp; 기륭</p>
+        <p className="signature">산희와 기륭 올림</p>
       </section>
     </main>
   );
