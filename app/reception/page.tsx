@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Reception from "./reception";
 
 export const metadata: Metadata = {
-  title: "산희 & 기륭",
+  title: "산희와 기륭의 프로젝트 페이지",
   description: "2026년 8월 15일, 산희와 기륭의 결혼 리셉션에 초대합니다.",
 };
 
