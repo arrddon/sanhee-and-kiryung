@@ -1,21 +1,27 @@
 @font-face {
-  font-family: "Rossce";
-  src: url("/font/rossce.otf") format("opentype");
-  font-display: swap;
-}
-
-@font-face {
   font-family: "HsGlidingSerif";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2604-1@1.0/HSHwalkongSerif-Regular.woff2") format("woff2");
   font-weight: normal;
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Ragille";
+  src: url("/font/Ragille-BF6a47f3a6a6daf.otf") format("opentype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Paquito";
+  src: url("/font/Paquito-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-display: swap;
+}
+
 :root {
   --beige: #f3f0e8;
   --ink: #171614;
-  --muted: #68645f;
-  --line: rgba(23, 22, 20, 0.2);
 }
 
 * {
@@ -35,8 +41,6 @@ body {
   font-family: "HsGlidingSerif", serif;
   -webkit-font-smoothing: antialiased;
 }
-a { color: inherit; }
-
 .invitation {
   width: min(100%, 430px);
   margin: 0 auto;
@@ -51,38 +55,43 @@ a { color: inherit; }
 }
 
 /* Cover */
-.opening { position: relative; background: #24231f; }
+.opening { background: #24231f; }
 .opening-image { position: relative; }
 .opening-copy {
   position: absolute;
-  top: 20px;
-  left: 20px;
-  right: 20px;
+  top: 32px;
+  left: 26px;
+  right: 26px;
   z-index: 2;
 }
 .opening-copy h1 {
+  position: relative;
   margin: 0;
   color: #fff;
-  font-family: "Rossce", Didot, serif;
-  font-size: clamp(32px, 9.5vw, 42px);
-  font-weight: 700;
+  font-family: "Ragille", serif;
+  font-size: clamp(41px, 11.7vw, 52px);
+  font-weight: 400;
+  font-style: normal;
+  font-synthesis: none;
   line-height: 1;
   letter-spacing: -.045em;
-  text-align: center;
-  white-space: nowrap;
 }
-.opening-copy h1 span { margin: 0 .08em; font-size: .72em; font-style:italic; }
+.title-name { display:block; width:max-content; }
+.title-name:first-child { margin-right:auto; transform:translateX(.2em); }
+.title-row { display:flex; align-items:baseline; justify-content:flex-end; gap:.18em; width:max-content; margin-left:auto; transform:translateX(-.12em); }
+.title-amp { font-family:inherit; font-size:1em; line-height:1; letter-spacing:inherit; }
 .opening-date {
   position: absolute;
   left: 50%;
-  right: auto;
   bottom: 20px;
   z-index: 2;
   margin: 0;
   color: #fff;
-  font-family: "HsGlidingSerif", serif;
-  font-size: 10px;
-  font-weight: 600;
+  font-family: "Paquito", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  font-style: normal;
+  font-synthesis: none;
   letter-spacing: .12em;
   text-align: center;
   white-space: nowrap;
@@ -91,42 +100,40 @@ a { color: inherit; }
 
 /* Invitation details */
 .information-panel { padding: 76px 42px 72px; text-align: center; }
-.invitation-heading { margin:0; font-family:"HsGlidingSerif",serif; font-size:28px; line-height:1.4; font-weight:400; letter-spacing:-.04em; }
-.invitation-heading::after { content:""; display:block; width:28px; height:1px; margin:27px auto 0; background:var(--ink); }
-.invitation-intro { margin:42px 0 58px; font-family:"HsGlidingSerif",serif; font-size:15px; font-weight:400; line-height:1.95; letter-spacing:-.02em; }
+.invitation-heading { margin:0; font-family:"HsGlidingSerif",serif; font-size:30px; line-height:1.4; font-weight:400; letter-spacing:-.04em; }
+.invitation-heading::after,
+.closing-divider { display:block; width:28px; height:0; border-top:1px solid var(--ink); }
+.invitation-heading::after { content:""; margin:27px auto 0; }
+.invitation-intro { margin:38px 0 56px; font-family:"HsGlidingSerif",serif; font-size:16px; font-weight:400; line-height:1.72; letter-spacing:-.02em; }
 .information-list { margin: 0; }
-.information-list div {
-  display: block;
-  padding: 0;
-}
-.information-list div + div { margin-top: 40px; }
-.information-list dt { color: var(--muted); font-size: 10px; font-weight: 650; letter-spacing: .14em; }
-.information-list dd { margin: 10px 0 0; font-size: 15px; font-weight: 500; line-height: 1.75; letter-spacing: 0; }
-.parking { margin: 36px 0 0; color: var(--muted); font-size: 10px; letter-spacing: .04em; }
+.information-list div + div { margin-top: 38px; }
+.information-list dt { color: var(--ink); font-family: Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .15em; }
+.information-list dd { margin: 11px 0 0; color: var(--ink); font-size: 16px; font-weight: 400; line-height: 1.58; letter-spacing: .04em; }
 .directions {
   display: inline-flex;
-  gap: 22px;
-  margin-top: 30px;
-  padding: 10px 2px 8px;
-  border-bottom: 1px solid var(--line);
-  font-size: 10px;
-  font-weight: 650;
-  letter-spacing: .08em;
+  align-items: center;
+  gap: 9px;
+  margin-top: 25px;
+  color: var(--ink);
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .13em;
   text-decoration: none;
 }
-.story-copy { margin-top: 66px; padding-top: 48px; border-top: 1px solid var(--line); }
-.story-copy p { margin: 0; font-family:"HsGlidingSerif",serif; font-size: 15px; font-weight: 400; line-height: 1.95; letter-spacing: -.02em; word-break:keep-all; }
-.story-copy p + p { margin-top: 26px; color: var(--muted); }
-
+.directions span { font-size: 13px; font-weight: 400; letter-spacing: 0; }
 /* Media stream */
 .videos-panel { display: grid; gap: 4px; }
 .media-panel { padding-top: 4px; }
-.media-frame { overflow: hidden; }
 
 /* Closing */
-.closing-panel { min-height: 62svh; display: grid; place-items: center; padding: 48px; }
-.closing-copy { margin: 0; font-family:"HsGlidingSerif",serif; font-size: 15px; font-weight: 400; letter-spacing: .02em; text-align: center; }
-.closing-copy::before { content: ""; display: block; width: 28px; height: 1px; margin: 0 auto 24px; background: var(--ink); }
+.closing-panel { min-height: 62svh; display: grid; place-items: center; padding: 64px 18px; }
+.closing-content { width: 100%; text-align: center; }
+.closing-message { display:grid; gap:6px; font-size:clamp(15px, 4vw, 16px); font-weight:400; line-height:1.4; letter-spacing:-.025em; word-break:keep-all; }
+.closing-message span { display:block; }
+.closing-divider { margin:22px auto 14px; }
+.closing-copy { margin:0; font-family:"HsGlidingSerif",serif; font-size:16px; font-weight:400; line-height:1.65; letter-spacing:.02em; text-align:center; }
 
 @media (prefers-reduced-motion: no-preference) {
   .reveal { animation: fade-in .65s ease-out both; }
