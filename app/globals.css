@@ -32,6 +32,7 @@
 img, video {
   -webkit-user-drag: none;
   user-drag: none;
+  -webkit-touch-callout: none;
 }
 html { background: #deddd9; }
 body {

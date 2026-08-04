@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect } from "react";
+
 function Media({ type = "image", src }: { type?: "image" | "video"; src: string }) {
   return type === "video" ? (
     <video className="asset" src={src} muted loop playsInline autoPlay preload="metadata" draggable={false} aria-label="산희와 기륭의 영상" />
@@ -7,6 +11,12 @@ function Media({ type = "image", src }: { type?: "image" | "video"; src: string 
 }
 
 export default function Reception() {
+  useEffect(() => {
+    const preventContextMenu = (event: MouseEvent) => event.preventDefault();
+    document.addEventListener("contextmenu", preventContextMenu);
+    return () => document.removeEventListener("contextmenu", preventContextMenu);
+  }, []);
+
   return (
     <main className="invitation">
       <section className="opening">
