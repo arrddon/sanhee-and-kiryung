@@ -28,6 +28,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ko">
+      <head>
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="anonymous" />
+        <link rel="preload" href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Lt.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+      </head>
       <body>{children}</body>
     </html>
   );
