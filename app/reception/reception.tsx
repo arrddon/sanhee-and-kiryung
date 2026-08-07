@@ -48,6 +48,8 @@ export default function Reception({
   familyIntroduction,
   introduction = <><p>7년 동안 함께한 시간이<br />새로운 이야기로 이어집니다.</p><p>가족들과의 작은 결혼식을 앞두고<br />소중한 분들과 이 기쁜 소식을 나누고자 합니다.</p></>,
 }: ReceptionProps) {
+  const openingDateParts = openingDate.match(/^(.*?)\s(SAT)\s·\s(.*)$/);
+
   useEffect(() => {
     const preventContextMenu = (event: MouseEvent) => event.preventDefault();
     document.addEventListener("contextmenu", preventContextMenu);
@@ -137,7 +139,13 @@ export default function Reception({
               <span className="title-row"><span className="title-amp">&amp;</span><span>KIRYUNG</span></span>
             </h1>
           </div>
-          <p className="opening-date"><span>{openingDate}</span></p>
+          <p className="opening-date">
+            <span>
+              {openingDateParts ? (
+                <>{openingDateParts[1]} <span className="opening-weekday">{openingDateParts[2]}</span> · {openingDateParts[3]}</>
+              ) : openingDate}
+            </span>
+          </p>
         </div>
       </section>
 
@@ -166,8 +174,7 @@ export default function Reception({
       <section className="closing-panel">
         <div className="closing-content reveal reveal-fade reveal-slow">
           <div className="closing-message">
-            <span>꿈을 나누며 좋은 친구이자 동료로</span>
-            <span>함께해 왔습니다.</span>
+            <span>꿈을 나누며 좋은 친구이자 동료로 함께했습니다.</span>
             <span>지금처럼 변함없이</span>
             <span>서로를 응원하는 절친한 짝꿍이 되겠습니다.</span>
             <span>저희 두 사람의 앞날을 가까이에서 축복해 주세요.</span>

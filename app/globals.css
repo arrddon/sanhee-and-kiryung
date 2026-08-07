@@ -138,7 +138,8 @@ body {
   white-space: nowrap;
   transform: translateX(-50%);
 }
-.opening-date span { display:block; opacity:var(--hero-date-opacity); transform:translateY(var(--hero-date-shift)); }
+.opening-date > span { display:block; opacity:var(--hero-date-opacity); transform:translateY(var(--hero-date-shift)); }
+.opening-date .opening-weekday { display:inline-block; font-size:1.1em; letter-spacing:.09em; transform:translateY(.01em); }
 
 /* Invitation details */
 .information-panel { padding: 72px 42px; text-align: center; }
