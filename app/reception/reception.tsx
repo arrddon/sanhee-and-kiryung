@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import type { ReactNode } from "react";
 
 const imageDimensions: Record<string, { width: number; height: number }> = {
   "/assets/pics%20(2).jpg": { width: 4672, height: 7008 },
@@ -24,7 +25,29 @@ function Media({ type = "image", src, priority = false }: { type?: "image" | "vi
   return <img className="asset" src={src} alt="산희와 기륭" width={dimensions?.width} height={dimensions?.height} loading={priority ? "eager" : "lazy"} fetchPriority={priority ? "high" : "auto"} decoding="async" draggable={false} />;
 }
 
-export default function Reception() {
+type ReceptionProps = {
+  openingDate?: string;
+  eventDate?: string;
+  invitationHeading?: string;
+  venue?: string;
+  address?: ReactNode;
+  mapUrl?: string;
+  enhancedReadability?: boolean;
+  familyIntroduction?: ReactNode;
+  introduction?: ReactNode;
+};
+
+export default function Reception({
+  openingDate = "2026. 08. 15. SAT · 12:30",
+  eventDate = "8월 15일 (토) 12시 30분",
+  invitationHeading = "피로연에 초대합니다",
+  venue = "중식당 보다",
+  address = <><span>서울 강남구 도산대로 308</span><br /><span>코오롱빌딩 · 주차 가능</span></>,
+  mapUrl = "https://naver.me/GctrqOF5",
+  enhancedReadability = false,
+  familyIntroduction,
+  introduction = <><p>7년 동안 함께한 시간이<br />새로운 이야기로 이어집니다.</p><p>가족들과의 작은 결혼식을 앞두고<br />소중한 분들과 이 기쁜 소식을 나누고자 합니다.</p></>,
+}: ReceptionProps) {
   useEffect(() => {
     const preventContextMenu = (event: MouseEvent) => event.preventDefault();
     document.addEventListener("contextmenu", preventContextMenu);
@@ -104,7 +127,7 @@ export default function Reception() {
   }, []);
 
   return (
-    <main className="invitation">
+    <main className={`invitation${enhancedReadability ? " invitation-readable" : ""}`}>
       <section className="opening">
         <div className="opening-image">
           <Media src="/assets/pics%20(2).jpg" priority />
@@ -114,22 +137,22 @@ export default function Reception() {
               <span className="title-row"><span className="title-amp">&amp;</span><span>KIRYUNG</span></span>
             </h1>
           </div>
-          <p className="opening-date"><span>2026. 08. 15. SAT · 12:30</span></p>
+          <p className="opening-date"><span>{openingDate}</span></p>
         </div>
       </section>
 
       <section className="information-panel">
-        <h2 className="invitation-heading reveal reveal-dissolve">피로연에 초대합니다</h2>
+        <h2 className="invitation-heading reveal reveal-dissolve">{invitationHeading}</h2>
         <div className="invitation-intro reveal reveal-fade">
-          <p>7년 동안 함께한 시간이<br />새로운 이야기로 이어집니다.</p>
-          <p>가족들과의 작은 결혼식을 앞두고<br />소중한 분들과 이 기쁜 소식을 나누고자 합니다.</p>
+          {introduction}
         </div>
+        {familyIntroduction ? <div className="family-introduction reveal reveal-fade">{familyIntroduction}</div> : null}
         <dl className="information-list reveal reveal-fade">
-          <div><dt>일시</dt><dd>8월 15일 (토) 12시 30분</dd></div>
-          <div><dt>장소</dt><dd>중식당 보다</dd></div>
-          <div><dt>찾아오시는 길</dt><dd>서울 강남구 도산대로 308<br />코오롱빌딩 · 주차 가능</dd></div>
+          <div><dt>일시</dt><dd>{eventDate}</dd></div>
+          <div><dt>장소</dt><dd>{venue}</dd></div>
+          <div><dt>찾아오시는 길</dt><dd>{address}</dd></div>
         </dl>
-        <a className="directions reveal reveal-fade" href="https://naver.me/GctrqOF5" target="_blank" rel="noreferrer" aria-label="네이버 지도에서 장소 보기">NAVER MAP <span>↗</span></a>
+        <a className="directions reveal reveal-fade" href={mapUrl} target="_blank" rel="noreferrer" aria-label="네이버 지도에서 장소 보기">NAVER MAP <span>↗</span></a>
       </section>
 
       <section className="videos-panel">

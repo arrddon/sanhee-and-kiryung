@@ -149,6 +149,10 @@ body {
 .invitation-intro { margin:38px 0 56px; font-family:"BookkMyungjo",serif; font-size:14px; font-weight:400; line-height:1.9; letter-spacing:-.01em; }
 .invitation-intro p { margin:0; }
 .invitation-intro p + p { margin-top:12px; }
+.family-introduction { margin:0 0 46px; font-family:"BookkMyungjo",serif; font-size:14px; font-weight:400; line-height:1.9; letter-spacing:.02em; }
+.family-introduction p { margin:0; }
+.family-introduction p + p { margin-top:4px; }
+.family-introduction strong { font-weight:700; }
 .information-list { margin: 0; }
 .information-list div + div { margin-top: 38px; }
 .information-list dt { color:var(--ink); font-family:"BookkMyungjo",serif; font-size:14px; font-weight:700; letter-spacing:.05em; }
@@ -204,6 +208,18 @@ body {
 .closing-message span { display:block; }
 .closing-divider { margin:22px auto 14px; }
 .closing-copy { margin:0; font-family:"BookkMyungjo",serif; font-size:14px; font-weight:400; line-height:1.55; letter-spacing:-.01em; text-align:center; }
+
+/* Wedding edition: improved legibility for older guests without changing the reception page. */
+.invitation-readable .opening-date { font-size:14px; letter-spacing:.05em; }
+.invitation-readable .information-panel { padding-inline:34px; }
+.invitation-readable .invitation-heading { font-size:30px; line-height:1.5; letter-spacing:-.035em; }
+.invitation-readable .invitation-intro { font-size:16px; line-height:2; letter-spacing:0; }
+.invitation-readable .family-introduction { margin-bottom:48px; font-size:16px; line-height:1.9; letter-spacing:.015em; }
+.invitation-readable .information-list dt { font-size:15px; letter-spacing:.06em; }
+.invitation-readable .information-list dd { margin-top:11px; font-size:16px; line-height:1.8; letter-spacing:.025em; }
+.invitation-readable .directions { font-size:14px; letter-spacing:.14em; }
+.invitation-readable .closing-message { gap:10px; font-size:16px; line-height:1.75; letter-spacing:0; }
+.invitation-readable .closing-copy { font-size:16px; line-height:1.75; letter-spacing:0; }
 
 @media (min-width: 431px) {
   .invitation { box-shadow: 0 0 42px rgba(27, 24, 19, .14); }
