@@ -35,6 +35,7 @@ type ReceptionProps = {
   enhancedReadability?: boolean;
   familyIntroduction?: ReactNode;
   introduction?: ReactNode;
+  closingSignature?: string;
 };
 
 export default function Reception({
@@ -47,6 +48,7 @@ export default function Reception({
   enhancedReadability = false,
   familyIntroduction,
   introduction = <><p>7년 동안 함께한 시간이<br />새로운 이야기로 이어집니다.</p><p>가족들과의 작은 결혼식을 앞두고<br />소중한 분들과 이 기쁜 소식을 나누고자 합니다.</p></>,
+  closingSignature = "정산희 남기륭 올림",
 }: ReceptionProps) {
   const openingDateParts = openingDate.match(/^(.*?)\s(SAT)\s·\s(.*)$/);
 
@@ -180,7 +182,7 @@ export default function Reception({
             <span>저희 두 사람의 앞날을 가까이에서 축복해 주세요.</span>
           </div>
           <span className="closing-divider" aria-hidden="true" />
-          <p className="closing-copy">정산희 남기륭 올림</p>
+          <p className="closing-copy">{closingSignature}</p>
         </div>
       </section>
     </main>
