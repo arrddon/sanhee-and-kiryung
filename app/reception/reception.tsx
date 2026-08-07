@@ -166,7 +166,8 @@ export default function Reception({
       <section className="closing-panel">
         <div className="closing-content reveal reveal-fade reveal-slow">
           <div className="closing-message">
-            <span>꿈을 나누며 좋은 친구이자 동료로 함께해 왔습니다.</span>
+            <span>꿈을 나누며 좋은 친구이자 동료로</span>
+            <span>함께해 왔습니다.</span>
             <span>지금처럼 변함없이</span>
             <span>서로를 응원하는 절친한 짝꿍이 되겠습니다.</span>
             <span>저희 두 사람의 앞날을 가까이에서 축복해 주세요.</span>

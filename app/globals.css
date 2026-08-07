@@ -214,12 +214,12 @@ body {
 .invitation-readable .information-panel { padding-inline:34px; }
 .invitation-readable .invitation-heading { font-size:30px; line-height:1.5; letter-spacing:-.035em; }
 .invitation-readable .invitation-intro { font-size:16px; line-height:2; letter-spacing:0; }
-.invitation-readable .family-introduction { margin-bottom:48px; font-size:16px; line-height:1.9; letter-spacing:.015em; }
+.invitation-readable .family-introduction { margin-bottom:48px; font-size:16px; line-height:2; letter-spacing:0; }
 .invitation-readable .information-list dt { font-size:15px; letter-spacing:.06em; }
 .invitation-readable .information-list dd { margin-top:11px; font-size:16px; line-height:1.8; letter-spacing:.025em; }
 .invitation-readable .directions { font-size:14px; letter-spacing:.14em; }
-.invitation-readable .closing-message { gap:10px; font-size:16px; line-height:1.75; letter-spacing:0; }
-.invitation-readable .closing-copy { font-size:16px; line-height:1.75; letter-spacing:0; }
+.invitation-readable .closing-message { gap:12px; font-size:16px; line-height:2; letter-spacing:0; }
+.invitation-readable .closing-copy { font-size:16px; line-height:2; letter-spacing:0; }
 
 @media (min-width: 431px) {
   .invitation { box-shadow: 0 0 42px rgba(27, 24, 19, .14); }
